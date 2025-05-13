@@ -36,6 +36,13 @@ public class ClientRepositoryImpl implements ClientRepository {
     }
 
     @Override
+    public Client findByName(String name) {
+        return jpaClientRepository.findByName(name)
+                .map(ClientEntity::toDomain)
+                .orElse(null);
+    }
+
+    @Override
     public List<Client> findAll() {
         return jpaClientRepository.findAll()
                 .stream()

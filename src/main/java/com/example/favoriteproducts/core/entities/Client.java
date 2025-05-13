@@ -6,11 +6,13 @@ public class Client {
     private UUID id;
     private String name;
     private String email;
+    private String password;
 
-    public Client(UUID id, String name, String email) {
+    public Client(UUID id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.password = password;
         validate();
     }
 
@@ -28,6 +30,10 @@ public class Client {
         }
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public UUID getId() {
         return id;
     }
@@ -39,4 +45,5 @@ public class Client {
     public String getEmail() {
         return email;
     }
+
 }

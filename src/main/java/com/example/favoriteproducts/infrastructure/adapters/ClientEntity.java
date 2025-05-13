@@ -10,10 +10,11 @@ public class ClientEntity {
     private UUID id;
     private String name;
     private String email;
+    private String password;
 
 
     public Client toDomain() {
-        return new Client(id, name, email);
+        return new Client(id, name, email, password);
     }
 
     public static ClientEntity fromDomain(Client client) {
@@ -21,6 +22,7 @@ public class ClientEntity {
         entity.id = client.getId();
         entity.name = client.getName();
         entity.email = client.getEmail();
+        entity.password = client.getPassword();
         return entity;
     }
 }
